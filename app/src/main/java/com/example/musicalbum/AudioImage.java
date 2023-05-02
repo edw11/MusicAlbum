@@ -34,8 +34,6 @@ public class AudioImage extends AppCompatActivity {
         stringId = res.getIdentifier("title"+tag, "string", getPackageName());
         mkKey = res.getString(stringId);
         title.setText(mkKey);
-
-
         stringId = res.getIdentifier("song_image"+tag, "string", getPackageName());
         mkKey = res.getString(stringId);
         int imageId = res.getIdentifier(mkKey, "drawable", getPackageName());
@@ -47,6 +45,8 @@ public class AudioImage extends AppCompatActivity {
         stringId = res.getIdentifier("audio"+tag, "string", getPackageName());
         mkKey = res.getString(stringId);
         int audioId = res.getIdentifier(mkKey,"raw",getPackageName());
+
+        mp = MediaPlayer.create(this,audioId);
         mp.setLooping(false);
         mp.start();
     }
